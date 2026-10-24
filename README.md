@@ -1,9 +1,13 @@
 # Axiom Lab MCP Server, CLI & SDKs (`azimo`)
 
+[![Axiom-lab-tech/axiomlab-mcp MCP server](https://glama.ai/mcp/servers/Axiom-lab-tech/axiomlab-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Axiom-lab-tech/axiomlab-mcp)
+
 Official **Model Context Protocol (MCP) server**, `azimo` command-line client, Python SDK, and TypeScript SDK for **[Axiom Lab](https://axiomlab.online)** — turn PDF pitch decks, PPTX slides, UI screenshots, product photos, and written briefs into QA-checked commercial videos.
 
 - **Website**: [https://axiomlab.online](https://axiomlab.online)
 - **Official MCP Registry**: [`io.github.Axiom-lab-tech/axiomlab-mcp`](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.Axiom-lab-tech%2Faxiomlab-mcp/versions/latest)
+- **Glama MCP Directory**: [https://glama.ai/mcp/servers/Axiom-lab-tech/axiomlab-mcp](https://glama.ai/mcp/servers/Axiom-lab-tech/axiomlab-mcp)
+- **Smithery Skill**: [`axiomlab/azimo`](https://smithery.ai/skills/axiomlab/azimo)
 - **MCP & Agent Guide**: [English](https://axiomlab.online/developers/cli-mcp) · [中文文档](https://axiomlab.online/zh/developers/cli-mcp)
 - **REST API Reference**: [https://axiomlab.online/developers/api](https://axiomlab.online/developers/api)
 - **Claude Skill (`SKILL.md`)**: [`skills/azimo/SKILL.md`](skills/azimo/SKILL.md) · [Online Guide](https://axiomlab.online/developers/skills)

@@ -1,0 +1,7 @@
+.git
+__pycache__
+*.pyc
+*.egg-info
+build
+dist
+typescript/node_modules
