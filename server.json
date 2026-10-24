@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Axiom-lab-tech/axiomlab-mcp",
+  "title": "Axiom Lab — AI Pitch Deck & Business Video MCP",
+  "description": "Turn PDFs, PPTX decks, product photos, and briefs into QA-checked commercial videos via MCP.",
+  "websiteUrl": "https://axiomlab.online",
+  "version": "0.6.0",
+  "repository": {
+    "url": "https://github.com/Axiom-lab-tech/axiomlab-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://axiomlab.online/brand/favicon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    },
+    {
+      "src": "https://axiomlab.online/brand/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://axiomlab.online/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <AZIMO_API_KEY> created at https://axiomlab.online/dev",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
