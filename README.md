@@ -3,7 +3,7 @@
 Official **Model Context Protocol (MCP) server**, `azimo` command-line client, Python SDK, and TypeScript SDK for **[Axiom Lab](https://axiomlab.online)** — turn PDF pitch decks, PPTX slides, UI screenshots, product photos, and written briefs into QA-checked commercial videos.
 
 - **Website**: [https://axiomlab.online](https://axiomlab.online)
-- **MCP & Agent Guide**: [https://axiomlab.online/developers/cli-mcp](https://axiomlab.online/developers/cli-mcp)
+- **MCP & Agent Guide**: [English](https://axiomlab.online/developers/cli-mcp) · [中文文档](https://axiomlab.online/zh/developers/cli-mcp)
 - **REST API Reference**: [https://axiomlab.online/developers/api](https://axiomlab.online/developers/api)
 - **Claude Skill (`SKILL.md`)**: [`skills/azimo/SKILL.md`](skills/azimo/SKILL.md) · [Online Guide](https://axiomlab.online/developers/skills)
 - **Full Playable Examples**: [https://axiomlab.online/examples](https://axiomlab.online/examples)
@@ -69,22 +69,27 @@ uvx --from "git+https://github.com/Axiom-lab-tech/axiomlab-mcp.git" azimo mcp
 
 ---
 
-## Available MCP Tools
+## Available MCP Tools (14 Tools, 4 Prompts, 2 Resources)
 
 | Tool | Description |
 | --- | --- |
-| `azimo_list_workflows` | List supported video workflows (`explainer`, `motion_explainer`, `product_pitch`, `profile_card`, etc.) and duration bounds |
+| `azimo_list_workflows` | List supported video workflows (`explainer`, `motion_explainer`, `product_pitch`, `profile_card`, `short_drama`, `creative_video`), durations, and aspect ratios |
+| `azimo_list_playground` | List ready-made starting templates (project intro, person card, product film, company intro, short-drama ad, e-commerce ad) with runnable examples |
 | `azimo_list_video_types` | Inspect structured fields for `project`, `product`, `personal`, `corporate`, and `name_card` videos |
-| `azimo_upload_asset` | Upload source PDFs, PPTX decks, DOCX briefs, PNG/JPG/WEBP product photos, or reference MP4/MOV clips |
+| `azimo_upload_asset` | Upload source PDFs, PPTX decks, DOCX briefs, PNG/JPG/WEBP photos, MP4/MOV clips, or audio references |
+| `azimo_list_assets` | List files uploaded to the current project with their `asset_id`s |
 | `azimo_create_plan` | Validate material and generate a **free** structured production plan before any paid rendering starts |
-| `azimo_get_plan` | Fetch an existing production plan and inspect requirements |
-| `azimo_create_video` | Start video production from a confirmed `ready` plan (idempotent per plan) |
-| `azimo_wait_video` | Poll until production finishes or pauses at `needs_input` (`confirm_duration`) after reading uploaded material |
-| `azimo_resume_video` | Confirm the suggested film duration (in seconds) or approve a paused step |
-| `azimo_get_video` | Retrieve job status, QA results, and signed MP4 film + cover download links |
-| `azimo_list_videos` | Paginate finished or in-progress videos in the active project |
-| `azimo_cancel_video` | Cancel a queued or paused job (cancelled and failed jobs are never charged) |
-| `azimo_get_balance` | Check available and reserved prepaid HKD wallet balance |
+| `azimo_create_video` | Start paid video production from a confirmed `ready` plan (idempotent per `plan_id`) |
+| `azimo_get_video` | Retrieve job status, stage, progress, and signed MP4 film + cover (+ SRT) download links |
+| `azimo_wait_video` | Long-poll until production reaches a terminal state or pauses at `needs_input` (`confirm_duration`) |
+| `azimo_list_videos` | List recent videos in the active project with status |
+| `azimo_cancel_video` | Cancel a queued, waiting, or running video job before its next paid step |
+| `azimo_approve_budget` | Authorize extra spending when a video stops with an approvable `budget_approval` request |
+| `azimo_resume_video` | Confirm the suggested film duration (`duration_sec`, 30–180s) or continue a paused `needs_input` video |
+| `azimo_get_balance` | Check total, reserved, and available prepaid HKD wallet balance |
+
+- **MCP Prompts (4)**: `create_product_video`, `create_company_intro`, `create_project_intro`, `create_person_card`
+- **MCP Resources (2)**: `azimo://workflows`, `azimo://video-types`
 
 **Safety by design**: Plans are always free. Production and billing only start after explicit confirmation, and `viewer`-role API keys can inspect plans and progress without permission to spend balance.
 
