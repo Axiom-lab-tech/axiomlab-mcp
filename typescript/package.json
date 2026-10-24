@@ -1,0 +1,52 @@
+{
+  "name": "@vidgen/sdk",
+  "version": "0.5.0",
+  "description": "Official zero-dependency TypeScript client for the Axiom Lab (axiomlab.online) AI business video production API",
+  "license": "MIT",
+  "homepage": "https://axiomlab.online/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axiom-lab-tech/axiomlab-mcp.git",
+    "directory": "typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/Axiom-lab-tech/axiomlab-mcp/issues",
+    "email": "feedback@axiomlab.online"
+  },
+  "keywords": [
+    "axiom-lab",
+    "axiomlab",
+    "vidgen",
+    "mcp",
+    "pitch-deck",
+    "ai-video",
+    "video-api",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "generate": "openapi-typescript ../../web/content/openapi.json -o schema.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "openapi-typescript": "7.13.0"
+  }
+}

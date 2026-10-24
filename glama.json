@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["xingbo778"],
+  "name": "Axiom Lab (azimo) Video Production MCP",
+  "description": "Turn PDF pitch decks, PPTX slides, UI screenshots, product photos, and written briefs into QA-checked narrated commercial videos (30–180s project explainers, 15–30s product showcases, and vertical founder cards) from Claude Code, Claude Desktop, or Cursor.",
+  "homepage": "https://axiomlab.online/developers/cli-mcp",
+  "documentation": "https://axiomlab.online/developers/cli-mcp.md",
+  "remoteUrl": "https://axiomlab.online/mcp"
+}

@@ -1,0 +1,16 @@
+# Smithery MCP configuration for Axiom Lab (azimo)
+# Documentation: https://axiomlab.online/developers/cli-mcp
+startCommand:
+  type: http
+  url: https://axiomlab.online/mcp
+  configSchema:
+    type: object
+    required:
+      - azimoApiKey
+    properties:
+      azimoApiKey:
+        type: string
+        description: "Axiom Lab API Key created at https://axiomlab.online/dev"
+      projectId:
+        type: string
+        description: "Optional project ID (X-Project-ID header)"

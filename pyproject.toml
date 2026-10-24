@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vidgen-sdk"
+version = "0.6.0"
+description = "Official Python client, `azimo` command line and MCP server for the Axiom Lab (axiomlab.online) AI business video production API"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["axiom-lab", "axiomlab", "vidgen", "mcp", "model-context-protocol", "pitch-deck", "ai-video", "product-video"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Video",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["requests>=2.31"]
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://axiomlab.online"
+Documentation = "https://axiomlab.online/developers"
+"MCP Server" = "https://axiomlab.online/developers/cli-mcp"
+Examples = "https://axiomlab.online/examples"
+Repository = "https://github.com/Axiom-lab-tech/axiomlab-mcp"
+Issues = "https://github.com/Axiom-lab-tech/axiomlab-mcp/issues"
+
+[project.scripts]
+azimo = "vidgen_sdk.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vidgen_sdk*"]
